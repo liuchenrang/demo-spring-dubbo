@@ -22,7 +22,7 @@ public class DubboConfig {
     @Bean
     public RegistryConfig registryConfig(){
         RegistryConfig registryConfig = new RegistryConfig();
-        registryConfig.setAddress("redis://localhost:6379");
+        registryConfig.setAddress("nacos://localhost:8848");
         return registryConfig;
     }
     @Bean

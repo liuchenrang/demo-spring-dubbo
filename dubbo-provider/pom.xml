@@ -16,6 +16,10 @@
             <artifactId>tomcat-embed-core</artifactId>
             <version>8.0.30</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-logging-juli -->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
