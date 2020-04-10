@@ -30,6 +30,7 @@
 <!--		<dubbo-spring-context-support.version>1.0.2</dubbo-spring-context-support.version>-->
 		<spring-boot.version>2.2.6.RELEASE</spring-boot.version>
 		<dubbo.version>2.7.6</dubbo.version>
+		<nacos.config.boot.version>0.2.7</nacos.config.boot.version>
 	</properties>
 
 
@@ -45,6 +46,11 @@
 				<groupId>com.jiajie.haosheng</groupId>
 				<artifactId>dubbo-user-service</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.alibaba.boot</groupId>
+				<artifactId>nacos-config-spring-boot-starter</artifactId>
+				<version>${nacos.config.boot.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

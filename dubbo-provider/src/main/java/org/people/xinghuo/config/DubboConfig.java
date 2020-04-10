@@ -29,7 +29,7 @@ public class DubboConfig {
     @Bean
     public ProtocolConfig protocolConfig(){
         ProtocolConfig protocolConfig = new ProtocolConfig();
-        protocolConfig.setName("http");
+        protocolConfig.setName("dubbo");
         protocolConfig.setPort(8099);
         return protocolConfig;
     }
