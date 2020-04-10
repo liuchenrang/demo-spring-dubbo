@@ -12,6 +12,23 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+            <version>8.0.30</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-logging-juli -->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-logging-juli</artifactId>
+            <version>8.0.30</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>javax.el-api</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
@@ -77,6 +94,22 @@
         <dependency>
             <groupId>com.alibaba.boot</groupId>
             <artifactId>nacos-discovery-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- rest -->
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-jaxrs -->
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-jaxrs</artifactId>
         </dependency>
     </dependencies>
     <build>

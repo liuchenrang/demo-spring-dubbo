@@ -29,8 +29,9 @@ public class DubboConfig {
     @Bean
     public ProtocolConfig protocolConfig(){
         ProtocolConfig protocolConfig = new ProtocolConfig();
-        protocolConfig.setName("dubbo");
+        protocolConfig.setName("rest");
         protocolConfig.setPort(8099);
+        protocolConfig.setServer("tomcat");
         return protocolConfig;
     }
     public MonitorConfig monitorConfig(){

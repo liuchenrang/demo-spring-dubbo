@@ -33,6 +33,11 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/com.github.briandilley.jsonrpc4j/jsonrpc4j -->
 
 
