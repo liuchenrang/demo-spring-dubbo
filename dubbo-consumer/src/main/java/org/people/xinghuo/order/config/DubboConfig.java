@@ -11,40 +11,40 @@ import org.springframework.context.annotation.Configuration;
  * @author chen
  */
 @Configuration
-@EnableDubboConfig
 public class DubboConfig {
     @Bean
     public ApplicationConfig applicationConfig(){
         ApplicationConfig config = new ApplicationConfig();
-        config.setName("orderProvider2");
+        config.setName("orderProvider");
         return config;
     }
     @Bean
     public RegistryConfig registryConfig(){
         RegistryConfig registryConfig = new RegistryConfig();
-        registryConfig.setAddress("nacos://localhost:8848");
+//        registryConfig.setAddress("nacos://localhost:8848");
+        registryConfig.setAddress("redis://localhost:6379");
+
         return registryConfig;
     }
-    @Bean
     public ProtocolConfig protocolConfig(){
         ProtocolConfig protocolConfig = new ProtocolConfig();
-        protocolConfig.setName("http");
+        protocolConfig.setName("rest");
+        protocolConfig.setServer("tomcat");
         protocolConfig.setPort(8099);
         return protocolConfig;
     }
+
     public MonitorConfig monitorConfig(){
         MonitorConfig monitorConfig = new MonitorConfig();
         monitorConfig.setProtocol("registry");
         return monitorConfig;
     }
-    ProviderConfig providerConfig(){
-        ProviderConfig providerConfig = new ProviderConfig();
-        return providerConfig;
-    }
+
     @Bean
-    public ReferenceConfig<DemoService> serviceConfig(){
+    public ReferenceConfig<DemoService> services(){
         ReferenceConfig<DemoService> service = new ReferenceConfig<>();
-        DubboBootstrap bootstrap = DubboBootstrap.getInstance().application(applicationConfig());
+        DubboBootstrap bootstrap = DubboBootstrap.getInstance();
+        bootstrap.application(applicationConfig());
         bootstrap.monitor(monitorConfig());
         bootstrap.registry(registryConfig());
         bootstrap.protocol(protocolConfig());
@@ -52,7 +52,7 @@ public class DubboConfig {
         // 多个注册中心可以用setRegistries()
         service.setInterface(DemoService.class);
         service.setVersion("1.0.0");
-
+        service.setCheck(false);
         return service;
     }
 
